@@ -1,5 +1,5 @@
 {
-  "name": "sc-lunar-core",
+  "name": "@sunnyclassmate/sc-lunar-core",
   "bin": {
     "sc-lunar-core": "./index.js"
   },

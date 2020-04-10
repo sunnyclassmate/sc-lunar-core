@@ -1,0 +1,28 @@
+{
+  "name": "sc-lunar-core",
+  "bin": {
+    "sc-lunar-core": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sunnyclassmate/sc-lunar-core.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  },
+  "version": "1.0.0",
+  "description": "convert lunar and solar calendar with timezone",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "keywords": [
+    "lunar",
+    "calendar"
+  ],
+  "author": "sunnyclassmate",
+  "license": "MIT",
+  "dependencies": {
+    "moment": "^2.24.0"
+  }
+}

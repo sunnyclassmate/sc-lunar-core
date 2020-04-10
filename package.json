@@ -1,5 +1,5 @@
 {
-  "name": "@sunnyclassmate/sc-lunar-core",
+  "name": "sc-lunar-core",
   "bin": {
     "sc-lunar-core": "./index.js"
   },
@@ -23,6 +23,7 @@
   "author": "sunnyclassmate",
   "license": "MIT",
   "dependencies": {
-    "moment": "^2.24.0"
+    "moment": "^2.24.0",
+    "search-index": "git+https://github.com/fergiemcdowall/search-index.git"
   }
 }

@@ -10,7 +10,7 @@ This package use lib of [cky-lunar-calendar], convert a date to lunar date with 
 ### Installation
   
 ```sh
-$ npm install sc-lunar-core --save
+$ npm install @sunnycalssmate/sc-lunar-core --save
 ```  
 ### function
 * **solar2Lunar *(date, month, yeaer, timezone)***

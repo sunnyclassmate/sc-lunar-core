@@ -63,7 +63,7 @@ const CHI = ["子", "丑", "寅", "卯", "辰", "巳", "午", "未", "申", "酉
 const HCAN = ["갑", "을", "병", "정", "무", "기", "경", "신", "임", "계"]; // 십간 (한자) - Stems (Hanja)
 const HCHI = ["자", "축", "인", "묘", "진", "사", "오", "미", "신", "유", "술", "해"]; // 십이지 (한자
 
-const TIMEZONE = 9
+const TIMEZONE = 9 //GMT+9
 
 /* Create lunar date object, stores (lunar) date, month, year, leap month indicator, and Julian date number */
 function LunarDate(dd, mm, yy, leap, jd) {

@@ -5,7 +5,7 @@
   - And revert lunar date to solar date
   - Check Lunar date validity
   
-This package use lib of [cky-lunar-calendar], convert a date to lunar date with timezone (default timezone is GMT+7)
+This package use lib of [cky-lunar-calendar], convert a date to lunar date with timezone (default timezone is GMT+9)
   
 ### Installation
   
@@ -13,7 +13,7 @@ This package use lib of [cky-lunar-calendar], convert a date to lunar date with 
 $ npm install @sunnycalssmate/sc-lunar-core --save
 ```  
 ### function
-* **solar2Lunar *(date, month, yeaer, timezone)***
+* **solar2Lunar *(date, month, year, timezone)***
     * `date` ***<[number]()>***: solar date
     * `month` ***<[number]()>***: solar month
     * `year` ***<[number]()>***: solar year
@@ -23,7 +23,7 @@ $ npm install @sunnycalssmate/sc-lunar-core --save
 > convert solar date to lunar date with timezone optional.
 ----
 
-* **lunar2Solar *(date, month, yeaer, timezone)***
+* **lunar2Solar *(date, month, year, timezone)***
     * `date` ***<[number]()>***: lunar date
     * `month` ***<[number]()>***: lunar month
     * `year` ***<[number]()>***: lunar year

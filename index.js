@@ -52,6 +52,13 @@ var lunar2Solar = (date) => {
     return r;
 }
 
+var getCanChi = (date) => {
+    let korDt = fixKoreaDt(date)
+    // console.log(`korDt: ${JSON.stringify(korDt)}`)
+
+    return cc.getCanChi(korDt.y, korDt.m, korDt.d, korDt.t)
+}
+
 Number.prototype.pad = function (size) {
     var s = String(this);
     while (s.length < (size || 2)) {
@@ -127,9 +134,11 @@ let getValidLunarDate = (y, m, d, t) => {
 }
 
 
+
+
 module.exports = {
     fixKoreaDt: fixKoreaDt,
     solar2Lunar: solar2Lunar,
     lunar2Solar: lunar2Solar,
-    getCanchi: cc.getCanchi
+    getCanChi: getCanChi,
 }

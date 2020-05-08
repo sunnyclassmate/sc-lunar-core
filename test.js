@@ -24,3 +24,6 @@ var solar = manse.lunar2Solar("198310311130");
 console.log(`Lunar -> Solar: ${moment('198310311130', 'YYYYMMDDHHmm').format('YYYY-MM-DD HH:mm')} -> ${JSON.stringify(solar)}`);
 var solar = manse.lunar2Solar("198310311330");
 console.log(`Lunar -> Solar: ${moment('198310311330', 'YYYYMMDDHHmm').format('YYYY-MM-DD HH:mm')} -> ${JSON.stringify(solar)}`);
+
+var canchi = manse.getCanChi('197201261130');
+console.log(`${JSON.stringify(canchi)}`);

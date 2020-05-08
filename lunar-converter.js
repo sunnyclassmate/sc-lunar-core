@@ -528,7 +528,10 @@ let getCanChi = (y, m, d, t) => {
     let hh, dd, mm, yy;
     // hh = CAN[((lunar.jd - 4) * 2 + 1) % 10] + " " + CHI[Math.floor((t + 1) / 2) % 12];
     // console.log((((lunar.jd-1) * 12)+Math.floor((t + 1) / 2))%10)
-    hh = CAN[(((lunar.jd -1) * 12)+Math.floor((t + 1) / 2))%10] + " " + CHI[Math.floor((t + 1) / 2) % 12];
+    hh = ""
+    if(t || t !== "" ){
+        hh = CAN[(((lunar.jd -1) * 12)+Math.floor((t + 1) / 2))%10] + " " + CHI[Math.floor((t + 1) / 2) % 12];
+    }
     dd = CAN[(lunar.jd + 9) % 10] + " " + CHI[(lunar.jd + 1) % 12];
     mm = CAN[(lunar.year * 12 + lunar.month + 3) % 10] + " " + CHI[(lunar.month + 1) % 12];
     // if (lunar.leap == 1) {

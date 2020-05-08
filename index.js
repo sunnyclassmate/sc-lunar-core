@@ -13,13 +13,17 @@ var fixKoreaDt = (date, fix) => {
     // console.log(`date: ${JSON.stringify(date)}`)
 
 
-    let korDt = fix
+    let korDt = moment();
+    if (date.length == 8) {
+        korDt = moment(date, 'YYYYMMDD');
+    } else if (date.length == 12) {
+        korDt = fix
             ? moment(date, 'YYYYMMDDHHmm').subtract({'minutes': COLLECTION_MINUTE})
             : moment(date, 'YYYYMMDDHHmm');
+    }
 
     // console.log(`korDt: ${JSON.stringify(korDt)}`)
-
-    return {y: korDt.year(), m: korDt.month() + 1, d: korDt.date(), t: korDt.hour()}
+    return {y: korDt.year(), m: korDt.month() + 1, d: korDt.date(), t: (date.length == 12)?korDt.hour():""}
 }
 
 /***
@@ -133,6 +137,7 @@ let getValidNextLunarDate = (y, m, d, t) => {
  * @returns {{d: (*|number), t: *, y: (*|number), m: (*|number)}|undefined|{d: *, t: *, y: *, m: *}}
  */
 let getValidLunarDate = (y, m, d, t) => {
+    t = t || 0
 
     if (cc.isValidLunar(y, m, d))
         return {y: y, m: m, d: d, t: t}
@@ -141,8 +146,6 @@ let getValidLunarDate = (y, m, d, t) => {
         ? getValidPrevLunarDate(y, m, d, t)
         : getValidNextLunarDate(y, m, d, t);
 }
-
-
 
 
 module.exports = {

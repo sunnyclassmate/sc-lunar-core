@@ -1,6 +1,6 @@
 {
   "name": "@sunnyclassmate/sc-lunar-core",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "convert lunar and solar calendar with timezone",
   "main": "index.js",
   "scripts": {

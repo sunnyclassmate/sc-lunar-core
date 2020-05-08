@@ -1,9 +1,10 @@
 # sc-lunar-core
 
 # Features!
-  - Convert solar date with timezone to lunar date
-  - And revert lunar date to solar date
-  - Check Lunar date validity
+  - 양력 -> 음력으로 변환한다.
+  - 음력 -> 양력으로 변환한다.
+  - 한국시간 30분 보정
+  - 음력일 유효성 체크
   
 This package use lib of [cky-lunar-calendar], convert a date to lunar date with timezone (default timezone is GMT+9)
   
@@ -13,24 +14,24 @@ This package use lib of [cky-lunar-calendar], convert a date to lunar date with 
 $ npm install @sunnyclassmate/sc-lunar-core --save
 ```  
 ### function
-* **solar2Lunar *(date, month, year, timezone)***
-    * `date` ***<[number]()>***: solar date
-    * `month` ***<[number]()>***: solar month
-    * `year` ***<[number]()>***: solar year
-    * `timezone` ***<[number]()>***: `optional`, timezone in GMT of your location you want, `default is 9`
+* **solar2Lunar *(datetime)***
+    * `datetime` ***<[number]()>***: solar datetime,  ex> 19720126, 197201261130
 - return Array [date, month, year]
 
-> convert solar date to lunar date with timezone optional.
+> solar datetime을  lunar datetime으로 변경한다.
 ----
 
-* **lunar2Solar *(date, month, year, timezone)***
-    * `date` ***<[number]()>***: lunar date
-    * `month` ***<[number]()>***: lunar month
-    * `year` ***<[number]()>***: lunar year
-    * `timezone` ***<[number]()>***: `optional`, timezone in GMT of your location you want, `default is 7`
+* **lunar2Solar *(datetime)***
+    * `date` ***<[number]()>***: lunar datetime,  ex> 19720126, 197201261130 
 - return `Array [date, month, year]`
-> convert lunar date to solar date with timezone optional.
+> lunar datetime을  solar datetime으로 변경한다.
 
+### publish
+package.json을 편집해서, version을 증가한후에, 다음 명령어로 배포한다.    
+
+```sh
+$ npm publish
+```  
   
 License
 ----

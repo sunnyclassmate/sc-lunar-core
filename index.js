@@ -7,11 +7,16 @@ const COLLECTION_MINUTE = 30;     //30분 보정
  * 날짜를 입력받아서, 한국 만세력용 날짜와 시간으로 변경한다.
  * @param date YYYYMMDDHHmm
  */
-var fixKoreaDt = (date) => {
+var fixKoreaDt = (date, fix) => {
+    fix = fix || false;
     date = date || moment().format('YYYYMMDDHHmm');
     // console.log(`date: ${JSON.stringify(date)}`)
 
-    let korDt = moment(date, 'YYYYMMDDHHmm').subtract({'minutes': COLLECTION_MINUTE})
+
+    let korDt = fix
+            ? moment(date, 'YYYYMMDDHHmm').subtract({'minutes': COLLECTION_MINUTE})
+            : moment(date, 'YYYYMMDDHHmm');
+
     // console.log(`korDt: ${JSON.stringify(korDt)}`)
 
     return {y: korDt.year(), m: korDt.month() + 1, d: korDt.date(), t: korDt.hour()}
@@ -21,8 +26,10 @@ var fixKoreaDt = (date) => {
  * 양력 날짜를 입력받아서, 음력날짜로 변환한다.
  * @param date 날짜 YYYYMMDDHHmm ex> 199912312359
  */
-var solar2Lunar = (date) => {
-    let korDt = fixKoreaDt(date)
+var solar2Lunar = (date, fix) => {
+    fix = fix || false;
+
+    let korDt = fixKoreaDt(date, fix)
     // console.log(`korDt: ${JSON.stringify(korDt)}`)
 
     let r = cc.solar2Lunar(korDt.y, korDt.m, korDt.d)
@@ -38,22 +45,24 @@ var solar2Lunar = (date) => {
  * @param date
  * @returns {{d: *, y: *, m: *}}
  */
-var lunar2Solar = (date) => {
+var lunar2Solar = (date, fix) => {
+    fix = fix || false;
 
-    let korDt = fixKoreaDt(date)
+    let korDt = fixKoreaDt(date, fix)
     // console.log(`korDt: ${JSON.stringify(korDt)}`)
 
     let lunar = getValidLunarDate(korDt.y, korDt.m, korDt.d, korDt.t);
 
     let r = cc.lunar2Solar(lunar.y, lunar.m, lunar.d)
-    r.t = lunar.t
+    r.t = korDt.t
     // console.log(`lunar: ${JSON.stringify(r)}`)
 
     return r;
 }
 
-var getCanChi = (date) => {
-    let korDt = fixKoreaDt(date)
+var getCanChi = (date, fix) => {
+    fix = fix || false;
+    let korDt = fixKoreaDt(date, fix)
     // console.log(`korDt: ${JSON.stringify(korDt)}`)
 
     return cc.getCanChi(korDt.y, korDt.m, korDt.d, korDt.t)

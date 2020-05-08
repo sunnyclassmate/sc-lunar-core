@@ -27,3 +27,7 @@ console.log(`Lunar -> Solar: ${moment('198310311330', 'YYYYMMDDHHmm').format('YY
 
 var canchi = manse.getCanChi('197201261130');
 console.log(`${JSON.stringify(canchi)}`);
+var canchi = manse.getCanChi('197201251130');
+console.log(`${JSON.stringify(canchi)}`);
+var canchi = manse.getCanChi('197201241130');
+console.log(`${JSON.stringify(canchi)}`);

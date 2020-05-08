@@ -12,17 +12,25 @@ This package use lib of [cky-lunar-calendar], convert a date to lunar date with 
   
 ```sh
 $ npm install @sunnyclassmate/sc-lunar-core --save
-```  
+``` 
+
+### Update
+```sh
+$ npm install @sunnyclassmate/sc-lunar-core@latest --save
+``` 
+ 
 ### function
-* **solar2Lunar *(datetime)***
+* **solar2Lunar *(datetime, fix)***
     * `datetime` ***<[number]()>***: solar datetime,  ex> 19720126, 197201261130
+    * `fix` ***<[bool]()>***: 한국시간 보정 여부,  ex> true/false - true인 경우 동경시에서 30분 보정한다.
 - return Array [date, month, year]
 
 > solar datetime을  lunar datetime으로 변경한다.
 ----
 
-* **lunar2Solar *(datetime)***
-    * `date` ***<[number]()>***: lunar datetime,  ex> 19720126, 197201261130 
+* **lunar2Solar *(datetime, fix)***
+    * `datetime` ***<[number]()>***: lunar datetime,  ex> 19720126, 197201261130
+    * `fix` ***<[bool]()>***: 한국시간 보정 여부,  ex> true/false - true인 경우 동경시에서 30분 보정한다. 
 - return `Array [date, month, year]`
 > lunar datetime을  solar datetime으로 변경한다.
 

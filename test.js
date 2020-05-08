@@ -25,6 +25,17 @@ console.log(`Lunar -> Solar: ${moment('198310311130', 'YYYYMMDDHHmm').format('YY
 var solar = manse.lunar2Solar("198310311330");
 console.log(`Lunar -> Solar: ${moment('198310311330', 'YYYYMMDDHHmm').format('YYYY-MM-DD HH:mm')} -> ${JSON.stringify(solar)}`);
 
+var solar = manse.lunar2Solar("19720126");
+console.log(`Lunar -> Solar: ${moment('19720126', 'YYYYMMDD').format('YYYY-MM-DD')} -> ${JSON.stringify(solar)}`);
+var solar = manse.lunar2Solar("19720125");
+console.log(`Lunar -> Solar: ${moment('19720125', 'YYYYMMDD').format('YYYY-MM-DD')} -> ${JSON.stringify(solar)}`);
+
+var string = manse.datetimeString(1972,1,26, 11)
+console.log(string)
+
+var string = manse.datetimeString(1972,1,26, "")
+console.log(string)
+
 var canchi = manse.getCanChi('197201261130');
 console.log(`${JSON.stringify(canchi)}`);
 var canchi = manse.getCanChi('19720126');

@@ -147,10 +147,26 @@ let getValidLunarDate = (y, m, d, t) => {
         : getValidNextLunarDate(y, m, d, t);
 }
 
+let datetimeString = (y, m, d, t) => {
+    console.log(`${y},${m},${d},${t}`)
+    // let datetimeString = moment(`${(y).pad(4)}${(m).pad()}${(d).pad()}}`, 'YYYYMMDD').format('YYYYMMDD')
+    // if(t || t !== "")
+    // {
+    //     datetimeString = moment(`${(y).pad(4)}${(m).pad()}${(d).pad()}${(t).pad()}`, 'YYYYMMDDHH').format('YYYYMMDDHHmm')
+    // }
+    let datetimeString = `${(y).pad(4)}${(m).pad()}${(d).pad()}`
+    if(t || t !== "")
+    {
+        datetimeString = `${datetimeString}${(t).pad()}`
+    }
+
+    return datetimeString
+}
 
 module.exports = {
-    fixKoreaDt: fixKoreaDt,
+    // fixKoreaDt: fixKoreaDt,
     solar2Lunar: solar2Lunar,
     lunar2Solar: lunar2Solar,
     getCanChi: getCanChi,
+    datetimeString: datetimeString
 }

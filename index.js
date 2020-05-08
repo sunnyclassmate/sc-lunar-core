@@ -154,7 +154,7 @@ let datetimeString = (date) => {
     let datetimeString = `${(date.y).pad(4)}${(date.m).pad()}${(date.d).pad()}`
     if(date.t || date.t !== "")
     {
-        datetimeString = `${datetimeString}${(date.t).pad()}`
+        datetimeString = `${datetimeString}${(date.t).pad()}${(0).pad()}`
     }
 
     return datetimeString

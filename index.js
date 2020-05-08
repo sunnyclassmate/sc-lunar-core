@@ -147,17 +147,14 @@ let getValidLunarDate = (y, m, d, t) => {
         : getValidNextLunarDate(y, m, d, t);
 }
 
-let datetimeString = (y, m, d, t) => {
-    console.log(`${y},${m},${d},${t}`)
-    // let datetimeString = moment(`${(y).pad(4)}${(m).pad()}${(d).pad()}}`, 'YYYYMMDD').format('YYYYMMDD')
-    // if(t || t !== "")
-    // {
-    //     datetimeString = moment(`${(y).pad(4)}${(m).pad()}${(d).pad()}${(t).pad()}`, 'YYYYMMDDHH').format('YYYYMMDDHHmm')
-    // }
-    let datetimeString = `${(y).pad(4)}${(m).pad()}${(d).pad()}`
-    if(t || t !== "")
+let datetimeString = (date) => {
+    console.log(`${date}`);
+    console.log(`${JSON.stringify(date)}`);
+    console.log(`${date.y},${date.m},${date.d},${date.t}`)
+    let datetimeString = `${(date.y).pad(4)}${(date.m).pad()}${(date.d).pad()}`
+    if(date.t || date.t !== "")
     {
-        datetimeString = `${datetimeString}${(t).pad()}`
+        datetimeString = `${datetimeString}${(date.t).pad()}`
     }
 
     return datetimeString
